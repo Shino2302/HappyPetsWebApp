@@ -7,27 +7,27 @@ export const routes: Routes = [
         children: [
             {
                 path: 'login',
-                title: 'Login',
+                title: 'Inicio de Sesión',
                 loadComponent: () => import('./dashboard/pages/login/login.component')
             },
             {
                 path: 'my-pets',
-                title: 'My Pets',
+                title: 'Mis Mascotas',
                 loadComponent: () => import('./dashboard/pages/my-pets/my-pets.component')
             },
             {
                 path: 'my-profile',
-                title: 'My profile',
+                title: 'Mi Perfil',
                 loadComponent: () => import('./dashboard/pages/my-user/my-user.component')
             },
             {
                 path: 'recover-password',
-                title: 'Recover Password',
+                title: 'Recuperar Contraseña',
                 loadComponent: () => import('./dashboard/pages/recover-password/recover-password.component')
             },
             {
                 path: 'register',
-                title: 'Register',
+                title: 'Registro',
                 loadComponent: () => import('./dashboard/pages/register/register.component')
             },
             {
