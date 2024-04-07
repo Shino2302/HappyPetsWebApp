@@ -12,7 +12,9 @@ export class SharedMenuComponent {
   public menuItemsIfOnlog = routes
   .map(route => route.children ?? [])
   .flat()
-  .filter(route => route && (route.path === 'login' || route.path === 'register'));
+  .filter(route => route && route.path === 'login');
+
+
 
   public menuAllRoutes = routes
   .map(route => route.children ?? [])

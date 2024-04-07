@@ -31,6 +31,11 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/register/register.component')
             },
             {
+                path: 'happy-dogs',
+                title: '¿Que Es Happy Dogs?',
+                loadComponent: () => import('./dashboard/pages/what-its-happy-dogs/what-its-happy-dogs.component')
+            },
+            {
                 path: '', redirectTo: 'control-flow', pathMatch: 'full'
             }
         ]
@@ -38,7 +43,7 @@ export const routes: Routes = [
     {
         //ruta por defecto, en esta te inicializa la aplicación:
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/dashboard/happy-dogs',
         pathMatch: 'full'
     }
 ];
