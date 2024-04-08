@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './add-pet.component.html',
   styles: ``
 })
-export class AddPetComponent {
+export default class AddPetComponent {
 
 }

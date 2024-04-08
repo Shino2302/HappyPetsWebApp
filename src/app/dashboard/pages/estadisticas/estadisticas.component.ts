@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './estadisticas.component.html',
   styles: ``
 })
-export class EstadisticasComponent {
+export default class EstadisticasComponent {
 
 }
