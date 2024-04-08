@@ -46,9 +46,9 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/add-pet/add-pet.component')
             },
             {
-                path: 'config-dispenser',
-                title: 'Configuracion Dispensador',
-                loadComponent: () => import('./dashboard/pages/config-dispenser/config-dispenser.component')
+                path: 'estadisticas',
+                title: 'Estadisticas',
+                loadComponent: () => import('./dashboard/pages/estadisticas/estadisticas.component')
             },
             {
                 path: '', redirectTo: 'control-flow', pathMatch: 'full'
