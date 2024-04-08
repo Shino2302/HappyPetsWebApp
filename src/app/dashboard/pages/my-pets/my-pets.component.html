@@ -1,44 +1,201 @@
-<div class="relative flex gap-10 flex-col items-end -mb-48 mt-12 sm:py-12">
-    <button class="btn overflow-hidden relative w-64 bg-green-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-green-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-      <span class="relative">Agregar</span>
-    </button>
-    <button class="btn overflow-hidden relative w-64 bg-red-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-red-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-      <span class="relative">Eliminar</span>
-    </button>
-    <button class="btn overflow-hidden relative w-64 bg-blue-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-blue-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-      <span class="relative">Editar</span>
-    </button>
-</div>
-<section class="-mt-12 mr-36 pl-10">
-    <div class="container">
-        <div class="grid grid-cols-4 gap-4">
-            <div class="">
-            </div>
-            <div class="">
-                <h3 class="text-2xl">Nombre</h3>
-            </div>
-            <div class="">
-                <h3 class="text-2xl">Raza</h3>
-            </div>
-            <div class="">
-                <h3 class="text-2xl">Dispensador</h3>
-            </div>
-            <div class="">
-                <label class="inline-flex items-center mt-3">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" ><span class="ml-2 text-gray-700"></span>
-                </label>
-            </div>
-            <div class="">
-                <h3 class="">Chiquinunis</h3>
-                <img class="md:size-32 rounded-full mt-2" src="https://i.ibb.co/gMhBZdh/Chiquinunis.jpg" alt="Chiquinunis">
-            </div>
-            <div class="">
-                <h3 class="">Croiyo</h3>
-            </div>
-            <div class="">
-                <h3 class="">Id:123456789</h3>
+<!-- 
+
+    <head>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+          <script>
+            var cont=0;
+        function loopSlider(){
+          var xx= setInterval(function(){
+                switch(cont)
+                {
+                case 0:{
+                    $("#slider-1").fadeOut(400);
+                    $("#slider-2").delay(400).fadeIn(400);
+                    $("#sButton1").removeClass("bg-purple-800");
+                    $("#sButton2").addClass("bg-purple-800");
+                cont=1;
+                
+                break;
+                }
+                case 1:
+                {
+                
+                    $("#slider-2").fadeOut(400);
+                    $("#slider-1").delay(400).fadeIn(400);
+                    $("#sButton2").removeClass("bg-purple-800");
+                    $("#sButton1").addClass("bg-purple-800");
+                   
+                cont=0;
+                
+                break;
+                }
+                }},8000);
+        
+        }
+        
+        function reinitLoop(time){
+        clearInterval(xx);
+        setTimeout(loopSlider(),time);
+        }
+        
+        function sliderButton1(){
+        
+            $("#slider-2").fadeOut(400);
+            $("#slider-1").delay(400).fadeIn(400);
+            $("#sButton2").removeClass("bg-purple-800");
+            $("#sButton1").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont=0
+            }
+            
+            function sliderButton2(){
+            $("#slider-1").fadeOut(400);
+            $("#slider-2").delay(400).fadeIn(400);
+            $("#sButton1").removeClass("bg-purple-800");
+            $("#sButton2").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont=1
+            
+            }
+        
+            $(window).ready(function(){
+                $("#slider-2").hide();
+                $("#sButton1").addClass("bg-purple-800");
+                
+                loopSlider();
+            });
+          </script>
+        </head>
+ -->
+
+
+ <!--  IMAGENES DE CARRUSEL QUE NO SIRVE XD -->
+ <div class="w-[50rem] h-[50rem] ml-[18rem] mt-[8rem]">
+     <div id="slider-1" class="">
+         <div class="bg-cover bg-center text-white py-24" style="background-image: url(../../../../assets/dogperfilTEST.jpeg)">
+             <div class="">
+                 <p class="font-bold text-sm uppercase">Services</p>
+                 <p class="text-3xl font-bold">Hello world</p>
+                 <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
+                 <a href="#" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
+             </div>  
+         </div> <!-- container -->
+         <br>
+     </div>
+     <div id="slider-2" class="">
+         <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+             <p class="font-bold text-sm uppercase">Services</p>
+             <p class="text-3xl font-bold">Hello world</p>
+             <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
+             <a href="#" class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
+         </div> <!-- container -->
+         <br>
+     </div>
+
+
+     <!--  CAJA CON CHECKBOXES -->
+     <article class="h-[40rem] w-[30rem] ml-[60rem] mt-[-45rem] mb-[3rem] p-[2rem]" style=" border-width: 2px; border-color: black;">
+        <div class="inline-flex items-center">
+            <label
+              class="relative flex cursor-pointer items-center rounded-full p-3"
+              for="checkbox-3"
+              data-ripple-dark="true"
+            >
+              <input
+                type="checkbox"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
+                id="checkbox-3"
+                checked
+              />
+              <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+            </label>
+            <label>PERRO 1</label>
+          </div>
+
+     </article>
+ </div>
+
+ <!--   BOTONES A LIMENTAR O EDITAR   -->
+ <div>
+    <button
+    class="middle none center mr-4 flex items-center justify-center rounded-lg bg-gradient-to-tr from-orange-600 to-orange-800 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    data-ripple-light="true"
+    >alimentar
+    <i class="fas fa-heart text-lg leading-none"></i>
+  </button>
+ </div>
+
+ <!--
+
+     <body>
+ 
+             <div  class="flex justify-between w-12 mx-auto pb-2" style="background-color: red;">
+                 <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full pb-2 " ></button>
+                 <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full p-2"></button>
+             </div>
+  
+     </body>
+ -->
+
+<!--
+
+    <div class="relative flex gap-10 flex-col items-end -mb-48 mt-12 sm:py-12">
+        <button class="btn overflow-hidden relative w-64 bg-green-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-green-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
+          <span class="relative">Agregar</span>
+        </button>
+        <button class="btn overflow-hidden relative w-64 bg-red-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-red-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
+          <span class="relative">Eliminar</span>
+        </button>
+        <button class="btn overflow-hidden relative w-64 bg-blue-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-blue-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
+          <span class="relative">Editar</span>
+        </button>
+    </div>
+    <section class="-mt-12 mr-36 pl-10">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-4">
+                <div class="">
+                </div>
+                <div class="">
+                    <h3 class="text-2xl">Nombre</h3>
+                </div>
+                <div class="">
+                    <h3 class="text-2xl">Raza</h3>
+                </div>
+                <div class="">
+                    <h3 class="text-2xl">Dispensador</h3>
+                </div>
+                <div class="">
+                    <label class="inline-flex items-center mt-3">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" ><span class="ml-2 text-gray-700"></span>
+                    </label>
+                </div>
+                <div class="">
+                    <h3 class="">Chiquinunis</h3>
+                    <img class="md:size-32 rounded-full mt-2" src="https://i.ibb.co/gMhBZdh/Chiquinunis.jpg" alt="Chiquinunis">
+                </div>
+                <div class="">
+                    <h3 class="">Croiyo</h3>
+                </div>
+                <div class="">
+                    <h3 class="">Id:123456789</h3>
+                </div>
             </div>
         </div>
-    </div>
-    
-</section>
+        
+    </section>
+-->
