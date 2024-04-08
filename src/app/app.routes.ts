@@ -36,6 +36,11 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/what-its-happy-dogs/what-its-happy-dogs.component')
             },
             {
+                path: 'config-dispenser',
+                title: 'Configuracion Dispensador',
+                loadComponent: () => import('./dashboard/pages/config-dispenser/config-dispenser.component')
+            },
+            {
                 path: '', redirectTo: 'control-flow', pathMatch: 'full'
             }
         ]
