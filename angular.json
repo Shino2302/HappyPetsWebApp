@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HappyPetsWebApp": {
+    "happy-pets-web-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "HappyPetsWebApp:build:production"
+              "buildTarget": "happy-pets-web-app:build:production"
             },
             "development": {
-              "buildTarget": "HappyPetsWebApp:build:development"
+              "buildTarget": "happy-pets-web-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "HappyPetsWebApp:build"
+            "buildTarget": "happy-pets-web-app:build"
           }
         },
         "test": {
