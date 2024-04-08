@@ -51,6 +51,16 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/estadisticas/estadisticas.component')
             },
             {
+                path: 'my-user',
+                title: 'Mi Perfil',
+                loadComponent: () => import('./dashboard/pages/my-user/my-user.component')
+            },
+            {
+                path: 'camera',
+                title: 'Camara',
+                loadComponent: () => import('./dashboard/pages/camera/camera.component')
+            },
+            {
                 path: '', redirectTo: 'control-flow', pathMatch: 'full'
             }
         ]
