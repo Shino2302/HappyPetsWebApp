@@ -1,1 +1,101 @@
-<p>my-user works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orange Form</title>
+  <style>
+    body {
+      background-color: #FFA500;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .form-container {
+      width: 80%;
+      margin: 150px auto 0;
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      position: relative; /* Para posicionar correctamente la flecha */
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #333333;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="tel"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 1px solid #FFA500;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #FFA500;
+      border: none;
+      border-radius: 5px;
+      color: #FFFFFF;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #FF8C00;
+    }
+
+    .left-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      color: #333333;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <!-- Aquí va tu código de encabezado nav -->
+  </nav>
+
+  <div class="left-arrow" onclick="window.history.back();">&#8592;</div>
+
+  <div class="form-container">
+    <form>
+      <div class="mb-5">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" placeholder="Nombre" required>
+      </div>
+      <div class="mb-5">
+        <label for="surname">Apellido</label>
+        <input type="text" id="surname" placeholder="Apellido" required>
+      </div>
+      <div class="mb-5">
+        <label for="email">Correo</label>
+        <input type="email" id="email" placeholder="Correo" required>
+      </div>
+      <div class="mb-5">
+        <label for="phone">Teléfono</label>
+        <input type="tel" id="phone" placeholder="Teléfono" required>
+      </div>
+
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</body>
+
+</html>
