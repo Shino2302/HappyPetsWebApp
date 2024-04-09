@@ -9,5 +9,4 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   styles: ``
 })
 export default class RegisterComponent {
-
 }

@@ -14,3 +14,4 @@ export const appConfig: ApplicationConfig = {
       importProvidersFrom(provideAuth(() => getAuth())),
       importProvidersFrom(provideDatabase(() => getDatabase()))]
 };
+ 
