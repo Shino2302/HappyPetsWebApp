@@ -16,7 +16,7 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/my-pets/my-pets.component')
             },
             {
-                path: 'my-profile/:uid',
+                path: 'my-profile/:uid/:token',
                 title: 'Mi Perfil',
                 loadComponent: () => import('./dashboard/pages/my-user/my-user.component')
             },

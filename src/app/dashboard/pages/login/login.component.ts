@@ -39,7 +39,7 @@ export default class LoginComponent {
       .subscribe(response  => {
         this.token = response.idToken;
         this.uid = response.localId;
-        this.router.navigate(['perfil-usuario',this.uid,this.token]);
+        this.router.navigate(['dashboard/my-profile/uid:'+this.uid.toString()+'/token:'+this.token.toString()]);
       });
     } 
     catch{
