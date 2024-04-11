@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +14,9 @@ export default class MyPetsComponent implements OnInit {
   uid:any;
   token:any;
 
-  constructor(private route: ActivatedRoute) {  }
+  
+
+  constructor(private route: ActivatedRoute, private http:HttpClient) {  }
   
   ngOnInit(): void {
     this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
