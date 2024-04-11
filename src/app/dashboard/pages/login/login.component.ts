@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { routes } from '../../../app.routes';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -21,7 +21,7 @@ export default class LoginComponent {
 
   loginForm: FormGroup;
   
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, private router:Router) {
     this.loginForm = new FormGroup({
       email: new FormControl(''),
       password: new FormControl('')
@@ -39,6 +39,7 @@ export default class LoginComponent {
       .subscribe(response  => {
         this.token = response.idToken;
         this.uid = response.localId;
+        this.router.navigate(['']);
       });
     } 
     catch{

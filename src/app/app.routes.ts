@@ -11,12 +11,12 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/login/login.component')
             },
             {
-                path: 'my-pets',
+                path: 'my-pets/:uid',
                 title: 'Mis Mascotas',
                 loadComponent: () => import('./dashboard/pages/my-pets/my-pets.component')
             },
             {
-                path: 'my-profile',
+                path: 'my-profile/:uid',
                 title: 'Mi Perfil',
                 loadComponent: () => import('./dashboard/pages/my-user/my-user.component')
             },
@@ -36,27 +36,22 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/what-its-happy-dogs/what-its-happy-dogs.component')
             },
             {
-                path: 'config-dispenser',
+                path: 'config-dispenser/:uid',
                 title: 'Configuracion Dispensador',
                 loadComponent: () => import('./dashboard/pages/config-dispenser/config-dispenser.component')
             },
             {
-                path: 'add-pet',
+                path: 'add-pet/:uid',
                 title: 'Agregar Mascota',
                 loadComponent: () => import('./dashboard/pages/add-pet/add-pet.component')
             },
             {
-                path: 'estadisticas',
+                path: 'estadisticas/:uid',
                 title: 'Estadisticas',
                 loadComponent: () => import('./dashboard/pages/estadisticas/estadisticas.component')
             },
             {
-                path: 'my-user',
-                title: 'Mi Perfil',
-                loadComponent: () => import('./dashboard/pages/my-user/my-user.component')
-            },
-            {
-                path: 'camera',
+                path: 'camera/:uid',
                 title: 'Camara',
                 loadComponent: () => import('./dashboard/pages/camera/camera.component')
             },
