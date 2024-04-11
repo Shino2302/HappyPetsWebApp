@@ -13,4 +13,17 @@ export class MyPetsService {
   public getMyPets(uid:string,token:string):Observable<PetsModel[]>{
     return this.http.get<PetsModel[]>('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid+'.json?auth='+token);
   }
+
+  public addPet(uid:string, token:string, jsonToAdd:PetsModel):void{
+    this.http.post('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid.toString()+'.json?auth='+token.toString(),jsonToAdd);
+  }
+
+  public deletePet(uid:string, token:string,petId:string):void{
+
+  }
+
+  public editPet(uid:string,token:string,petId:string, jsonToPut:PetsModel):void{
+
+  }
+
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PetsModel } from '../../../models/pets-model';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MyPetsService } from '../../../services/my-pets.service';
 
 @Component({
   selector: 'app-add-pet',
@@ -17,7 +18,7 @@ export default class AddPetComponent implements OnInit{
   token:any;
   addPetForm:FormGroup;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) 
+  constructor(private route: ActivatedRoute, private http: HttpClient, private petService:MyPetsService) 
   {
     this.addPetForm = new FormGroup({
       petAge: new FormControl(''),
@@ -37,9 +38,9 @@ export default class AddPetComponent implements OnInit{
       petRace: this.addPetForm.get('petRace')?.value,
       petSize: this.addPetForm.get('petSize')?.value
     };
-    this.http.post('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+this.uid.toString()+'.json?auth='+this.token.toString(),data);
+    this.petService.addPet(this.uid,this.token,data);
+    
   }
-
   ngOnInit(): void {
     this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
     this.token = this.route.snapshot.paramMap.get('token')?.toString();
