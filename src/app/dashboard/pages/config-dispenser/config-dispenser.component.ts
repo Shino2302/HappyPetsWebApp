@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-config-dispenser',
@@ -8,6 +8,14 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './config-dispenser.component.html',
   styles: ``
 })
-export default class ConfigDispenserComponent {
+export default class ConfigDispenserComponent implements OnInit{
+  uid:any;
+  token:any;
 
+  constructor(private route: ActivatedRoute) {  }
+
+  ngOnInit(): void {
+    this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
+    this.token = this.route.snapshot.paramMap.get('token')?.toString();
+  }
 }
