@@ -17,13 +17,13 @@ export class MyPetsService {
   public addPet(uid:string, token:string, jsonToAdd:PetsModel):void{
     this.http.post('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid.toString()+'.json?auth='+token.toString(),jsonToAdd);
   }
-
+  
   public deletePet(uid:string, token:string,petId:string):void{
-
+    this.http.delete('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid.toString()+'.json?auth='+token.toString());
   }
-
+  
   public editPet(uid:string,token:string,petId:string, jsonToPut:PetsModel):void{
-
+    this.http.post('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid.toString()+'.json?auth='+token.toString(),jsonToPut);
   }
 
 }
