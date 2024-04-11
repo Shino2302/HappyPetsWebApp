@@ -72,7 +72,7 @@ export default class RegisterComponent{
     ).subscribe(
       response => {
         console.log(response);
-        this.router.navigate(['./login']);
+        this.router.navigate(['dashboard/login']);
       },
       error =>{
         console.log('Tenemos un problema', error);
