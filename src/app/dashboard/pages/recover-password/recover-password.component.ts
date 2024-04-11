@@ -11,3 +11,5 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 export default class RecoverPasswordComponent {
 
 }
+//URL for recover password on Firebase AUTH
+//https://identitytoolkit.googleapis.com/v1/accounts:resetPassword?key=AIzaSyDSNgDmkvGv6a18hAk0CymT-_EgMORW50A
