@@ -15,6 +15,8 @@ export default class MyUserComponent implements OnInit {
   
   uid:any;
   token:any;
+  uidLimpio: string = "";
+  tokenLimpio: string = "";
 
   userData:Observable<UsersModel> | undefined;
 
@@ -25,18 +27,13 @@ export default class MyUserComponent implements OnInit {
     //en este caso obtenemos el uid y token del usuario para estar navegando entre si
     this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
     this.token = this.route.snapshot.paramMap.get('token')?.toString();
-    this.userData = this.userService.getMyInfo(this.uid,this.token);
-    this.userData.forEach(element => {
-      console.log(element.email);
-      console.log(element.name);
-      console.log(element.password);
-      console.log(element.phoneNumber);
-      console.log(element.profileImage);
-    });
+    this.uidLimpio = this.uid.toString();
+    this.uidLimpio = this.uidLimpio.replace(/uid:/g, "");
+    this.tokenLimpio = this.token.toString();
+    this.tokenLimpio = this.tokenLimpio.replace(/token:/g, "");
+    this.userData = this.userService.getMyInfo(this.uidLimpio,this.tokenLimpio);
+    console.log(this.tokenLimpio);
+    console.log(this.uidLimpio);
+    console.log(this.userData);
   }
-
-
-
-
-
 }
