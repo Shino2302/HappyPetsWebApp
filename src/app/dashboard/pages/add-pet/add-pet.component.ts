@@ -2,13 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PetsModel } from '../../../models/pets-model';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MyPetsService } from '../../../services/my-pets.service';
 
 @Component({
   selector: 'app-add-pet',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './add-pet.component.html',
   styles: ``
 })
