@@ -15,6 +15,7 @@ export default class MyUserComponent implements OnInit {
   
   uid:any;
   token:any;
+  //variables para limpiar el contenido de las cadenas
   uidLimpio: string = "";
   tokenLimpio: string = "";
 
@@ -27,10 +28,12 @@ export default class MyUserComponent implements OnInit {
     //en este caso obtenemos el uid y token del usuario para estar navegando entre si
     this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
     this.token = this.route.snapshot.paramMap.get('token')?.toString();
+    //limpiado de cadenas solo para obtner la información de estas y no el nombre del parametro
     this.uidLimpio = this.uid.toString();
     this.uidLimpio = this.uidLimpio.replace(/uid:/g, "");
     this.tokenLimpio = this.token.toString();
     this.tokenLimpio = this.tokenLimpio.replace(/token:/g, "");
+    //solicitud de datos mediante el servicio:
     this.userData = this.userService.getMyInfo(this.uidLimpio,this.tokenLimpio);
     console.log(this.tokenLimpio);
     console.log(this.uidLimpio);
