@@ -19,7 +19,7 @@ export default class MyUserComponent implements OnInit {
   uidLimpio: string = "";
   tokenLimpio: string = "";
 
-  userData:Observable<UsersModel> | undefined;
+  userData:Observable<any> | undefined;
 
   constructor(private route: ActivatedRoute,private userService:MyUserService) {  }
 

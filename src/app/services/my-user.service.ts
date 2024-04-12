@@ -10,9 +10,9 @@ export class MyUserService {
 
   constructor(private http:HttpClient) { }
 
-  public getMyInfo(uid: string, token: string): Observable<UsersModel> {
+  public getMyInfo(uid: string, token: string): Observable<any> {
     const url = `https://happydogdb-55b97-default-rtdb.firebaseio.com/Users/${uid}/.json?auth=${token}`;
-    return this.http.get<UsersModel>(url);
+    return this.http.get<any>(url);
   }
   
 
