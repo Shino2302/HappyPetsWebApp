@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MyUserService } from '../../../services/my-user.service';
 import { UsersModel } from '../../../models/users-model';
 import { Observable } from 'rxjs';
@@ -19,9 +19,32 @@ export default class MyUserComponent implements OnInit {
   uidLimpio: string = "";
   tokenLimpio: string = "";
 
-  userData:Observable<any> | undefined;
+  //variable para deserealizar el JSON
+  JSONs:string = "";
 
-  constructor(private route: ActivatedRoute,private userService:MyUserService) {  }
+  userDataSinLimpiar:Observable<any> | undefined;
+  userDataLimpio:UsersModel = 
+  {
+    name: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    profileImage: ""
+  };
+
+  constructor(private route: ActivatedRoute,private userService:MyUserService, private router:Router) {  }
+
+  userDelete(): void {
+    this.userService.userDelete(this.uidLimpio, this.tokenLimpio).subscribe(
+      response => {
+        console.log('Usuario eliminado con éxito', response);
+        this.router.navigate(['dashboard/happy-dogs']);
+      },
+      error => {
+        console.error('Error al eliminar el usuario', error);
+      }
+    );
+  }
 
   ngOnInit(): void {
     //Metodo para mapear la informacion en el URL de la app:
@@ -34,9 +57,19 @@ export default class MyUserComponent implements OnInit {
     this.tokenLimpio = this.token.toString();
     this.tokenLimpio = this.tokenLimpio.replace(/token:/g, "");
     //solicitud de datos mediante el servicio:
-    this.userData = this.userService.getMyInfo(this.uidLimpio,this.tokenLimpio);
+    this.userService.getMyInfo(this.uidLimpio,this.tokenLimpio).subscribe(userData => {
+      console.log(userData); // Aquí puedes ver los datos emitidos por el Observable
+      this.userDataLimpio = userData; // Ahora puedes asignar los datos a tu variable userDataLimpio
+    });
+    
+    
+    console.log(this.userDataLimpio)
     console.log(this.tokenLimpio);
     console.log(this.uidLimpio);
-    console.log(this.userData);
+    this.JSONs = JSON.stringify(this.userDataSinLimpiar);
+    console.log(this.JSONs);
+
+    
+
   }
 }
