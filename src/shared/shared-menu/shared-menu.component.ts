@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { routes } from '../../app/app.routes';
 import { RouterModule } from '@angular/router';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-shared-menu',
@@ -9,6 +10,9 @@ import { RouterModule } from '@angular/router';
   templateUrl: './shared-menu.component.html',
 })
 export class SharedMenuComponent {
+
+  areYouLogin:boolean = false;
+
   public menuItemsIfOnlog = routes
   .map(route => route.children ?? [])
   .flat()

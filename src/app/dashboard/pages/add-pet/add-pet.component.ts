@@ -13,11 +13,12 @@ import { MyPetsService } from '../../../services/my-pets.service';
   styles: ``
 })
 export default class AddPetComponent implements OnInit{
-
   uid:any;
   token:any;
+  uidLimpio: string = "";
+  tokenLimpio: string = "";
+  //Data to Form
   addPetForm:FormGroup;
-
   constructor(private route: ActivatedRoute, private http: HttpClient, private petService:MyPetsService) 
   {
     this.addPetForm = new FormGroup({
@@ -29,6 +30,23 @@ export default class AddPetComponent implements OnInit{
     })
   }
 
+  onFileSelected(event:any) {
+    const file = event.target.files[0];
+    
+    if (file) {
+      const reader = new FileReader();
+      
+      reader.onload = this.handleReaderLoaded.bind(this);
+      reader.readAsBinaryString(file);
+    }
+  }
+
+  handleReaderLoaded(readerEvt:any) {
+    let binaryString = readerEvt.target.result;
+    let base64textString = btoa(binaryString);
+    this.addPetForm.get('petImage')?.setValue(base64textString);
+  }
+
   addPet():void{
 
     let data:PetsModel = {
@@ -38,14 +56,14 @@ export default class AddPetComponent implements OnInit{
       petRace: this.addPetForm.get('petRace')?.value,
       petSize: this.addPetForm.get('petSize')?.value
     };
-    this.petService.addPet(this.uid,this.token,data);
-    
+    this.petService.addPet(this.uidLimpio,this.tokenLimpio,data);
   }
   ngOnInit(): void {
     this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
     this.token = this.route.snapshot.paramMap.get('token')?.toString();
+    this.uidLimpio = this.uid.toString();
+    this.uidLimpio = this.uidLimpio.replace(/uid:/g, "");
+    this.tokenLimpio = this.token.toString();
+    this.tokenLimpio = this.tokenLimpio.replace(/token:/g, "");
   }
-
-
-
 }
