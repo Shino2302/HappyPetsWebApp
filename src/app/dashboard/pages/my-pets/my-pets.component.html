@@ -5,16 +5,143 @@
 <div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat"
   style="background-image: url(../../../../assets/fondo\ HD.jpg)">
 
+  <!--
 
-  <!--  intento de carrusel -->
+  <div style="border-width: 2px; background-color: white; border-color: black;" class="flex flex-row gap-4">
+    <img src="ruta_de_la_imagen.jpg" alt="Imagen" class="w-1/3 h-auto">
+    <label for="algo" class="w-1/3">ALGO</label>
+    <input type="checkbox" id="algo" class="w-1/3">
+</div>
+-->
+
+<div class="relative w-[60%] h-[70%]" style="overflow-y: scroll; background-color: #fffa;">
+
+  <table class="w-full">
+    <thead>
+      <tr>
+        <th
+          class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+          Mascota</th>
+        <th
+          class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+          Raza</th>
+        <th
+          class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+          Config_Dispenser</th>
+        <th
+          class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+          select</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 w-10 h-10">
+              <img class="w-full h-full rounded-full"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                alt="" />
+            </div>
+            <div class="ml-3">
+              <p class="text-gray-900 whitespace-no-wrap">
+                Vera Carpenter
+              </p>
+            </div>
+          </div>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <p class="text-gray-900 whitespace-no-wrap">chihuahua</p>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <p class="text-gray-900 whitespace-no-wrap">
+            Mucho alimento
+          </p>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+          <input type="checkbox" class="align-middle " />
+        </td>
+        <!--
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                    <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                    <span class="relative">Activo</span>
+                  </span>
+                </td>
+                -->
+      </tr>
+
+
+
+
+      
+    </tbody>
+  </table>
+</div>
+
+
+<div style="background-color: red; border-width: 3px; border-color: black;" class=" ml-[10rem] h-[70%] w-[15rem]">
+
+  <button class="relative h-[7%] w-[10%] mt-4 top-[20%] left-[5%]"
+  style="background-color: white; font-size: 2rem;">alimentar</button>
+  
+  <button class="relative h-[7%] w-[10%] mt-4 top-[10%] right-[5%]"
+  style="background-color: white; font-size: 2rem;">alimentar</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  PAGINA CON CARRUSEL 
 
 
   <div class=" w-[45%]">
-    <!-- Section: Details -->
+    <!-- Section: Details 
     <section class="">
       <div class=" gap-8 lg:grid-cols-2">
         <div id="carouselExampleCaptions" class="relative" data-twe-carousel-init data-twe-carousel-slide>
-          <!--Carousel indicators-->
+          <!--Carousel indicators
           <div class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
             data-twe-carousel-indicators>
             <button type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide-to="0"
@@ -29,9 +156,9 @@
               aria-label="Slide 3"></button>
           </div>
 
-          <!--Carousel items-->
+          <!--Carousel items
           <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-            <!--First item-->
+            <!--First item
             <div
               class="relative float-left -me-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
               data-twe-carousel-active data-twe-carousel-item style="backface-visibility: hidden">
@@ -43,7 +170,7 @@
                 </p>
               </div>
             </div>
-            <!--Second item-->
+            <!--Second item
             <div
               class="relative float-left -me-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
               data-twe-carousel-item style="backface-visibility: hidden">
@@ -55,7 +182,7 @@
                 </p>
               </div>
             </div>
-            <!--Third item-->
+            <!--Third item
             <div
               class="relative float-left -me-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
               data-twe-carousel-item style="backface-visibility: hidden">
@@ -69,7 +196,7 @@
             </div>
           </div>
 
-          <!--Carousel controls - prev item-->
+          <!--Carousel controls - prev item
           <button
             class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
             type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide="prev">
@@ -82,7 +209,7 @@
             <span
               class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
           </button>
-          <!--Carousel controls - next item-->
+          <!--Carousel controls - next item
           <button
             class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
             type="button" data-twe-target="#carouselExampleCaptions" data-twe-slide="next">
@@ -99,11 +226,11 @@
 
       </div>
     </section>
-    <!-- Section: Details -->
+    <!-- Section: Details 
   </div>
 
 
-  <!--checkbox que aumentaran dependiendo de la cantidad de mascotas que tenga el usuario-->
+  <!--checkbox que aumentaran dependiendo de la cantidad de mascotas que tenga el usuario
 
 
   <div class="relative left-[13%] h-[65%] w-[20%] p-[10px]"
@@ -122,7 +249,7 @@
 
   </div>
 
-  <!--   BOTONES A LIMENTAR O EDITAR   -->
+  <!--   BOTONES A LIMENTAR O EDITAR   
   <button
     class="top-[37%] right-[65%]  relative flex items-center rounded-lg bg-gradient-to-tr from-orange-600 to-orange-800 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
     alimentar
@@ -134,65 +261,5 @@
     alimentar
     <i class="fas fa-heart text-lg leading-none"></i>
   </button>
-</div>
-
-
-<!--
-
-     <body>
- 
-             <div  class="flex justify-between w-12 mx-auto pb-2" style="background-color: red;">
-                 <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full pb-2 " ></button>
-                 <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full p-2"></button>
-             </div>
-  
-     </body>
- -->
-
-<!--
-
-    <div class="relative flex gap-10 flex-col items-end -mb-48 mt-12 sm:py-12">
-        <button class="btn overflow-hidden relative w-64 bg-green-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-green-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-          <span class="relative">Agregar</span>
-        </button>
-        <button class="btn overflow-hidden relative w-64 bg-red-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-red-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-          <span class="relative">Eliminar</span>
-        </button>
-        <button class="btn overflow-hidden relative w-64 bg-blue-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-blue-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-          <span class="relative">Editar</span>
-        </button>
-    </div>
-    <section class="-mt-12 mr-36 pl-10">
-        <div class="container">
-            <div class="grid grid-cols-4 gap-4">
-                <div class="">
-                </div>
-                <div class="">
-                    <h3 class="text-2xl">Nombre</h3>
-                </div>
-                <div class="">
-                    <h3 class="text-2xl">Raza</h3>
-                </div>
-                <div class="">
-                    <h3 class="text-2xl">Dispensador</h3>
-                </div>
-                <div class="">
-                    <label class="inline-flex items-center mt-3">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" ><span class="ml-2 text-gray-700"></span>
-                    </label>
-                </div>
-                <div class="">
-                    <h3 class="">Chiquinunis</h3>
-                    <img class="md:size-32 rounded-full mt-2" src="https://i.ibb.co/gMhBZdh/Chiquinunis.jpg" alt="Chiquinunis">
-                </div>
-                <div class="">
-                    <h3 class="">Croiyo</h3>
-                </div>
-                <div class="">
-                    <h3 class="">Id:123456789</h3>
-                </div>
-            </div>
-        </div>
-        
-    </section>
 -->
+</div>

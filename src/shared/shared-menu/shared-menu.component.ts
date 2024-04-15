@@ -16,6 +16,7 @@ export class SharedMenuComponent {
 
 
 
+
   public menuAllRoutes = routes
   .map(route => route.children ?? [])
   .flat()
