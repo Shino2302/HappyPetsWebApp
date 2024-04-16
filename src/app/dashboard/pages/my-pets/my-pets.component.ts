@@ -1,11 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  Collapse,
-  Dropdown,
-  Ripple,
-  Carousel,
-  initTWE
-} from "tw-elements";
+import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-my-pets',
   standalone: true,
@@ -13,9 +7,6 @@ import {
   templateUrl: './my-pets.component.html',
   styles: ``
 })
-export default class MyPetsComponent implements OnInit{
-  ngOnInit(): void {
-    initTWE({ Collapse, Dropdown, Ripple, Carousel });
-  }
-
+export default class mypetsComponent {
+  constructor() {  }
 }

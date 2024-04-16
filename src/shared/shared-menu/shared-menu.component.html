@@ -1,7 +1,7 @@
-<nav class="fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600" style="background-color: white;">
+<nav class="fixed w-full z-20 top-0 start-0 border-b border-black " style="background-color: #f51; ">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" >
         <a  class="flex items-center space-x-3 rtl:space-x-reverse" [routerLink]="['/dashboard/happy-dogs']">
-            <img src="https://i.ibb.co/wgqXKxQ/logo-console.png" alt="logo-console" class="h-8" alt="Flowbite Logo"> 
+            <img src="https://i.ibb.co/gJbphx9/icononew.png" alt="logo-console" class="size-[40px]" alt="Flowbite Logo"> 
             
             <span class="self-center text-2xl font-semibold whitespace-nowrap text-black transition-all transition-delay:600ms hover:text-blue-500 hover:underline">Happy Pets</span>
         </a>
@@ -17,12 +17,6 @@
             <ul class="flex flex-col justify-self-end p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-6 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent">
                 @for(item of menuItemsIfOnlog; track item.title)
                     {
-                        <li>
-                            <a [routerLink]="item.path" class=" text-black text-2xl transition-all transition-delay:600ms hover:text-blue-500 hover:underline">{{item.title}}</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="item.path" class=" text-black text-2xl transition-all transition-delay:600ms hover:text-blue-500 hover:underline">{{item.title}}</a>
-                        </li>
                         <li>
                             <a [routerLink]="item.path" class=" text-black text-2xl transition-all transition-delay:600ms hover:text-blue-500 hover:underline">{{item.title}}</a>
                         </li>

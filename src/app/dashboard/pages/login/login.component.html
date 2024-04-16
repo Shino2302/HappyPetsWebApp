@@ -1,21 +1,21 @@
-<div class="min-h-screen flex items-center justify-center w-full ">
-	<div class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md">
-		<h1 class="text-2xl font-bold text-center mb-4 dark:text-gray-200">!Bienvenido de vuelta!</h1>
+<div class=" flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style="background-image: url(../../../../assets/perro-juega-en-parque.jpg);">
+	<div class=" shadow-md rounded-lg px-8 py-6 max-w-md" style="background-color: #f81d; border-color: #fa3d; border-width: 5px;">
+		<h1 class="text-2xl font-bold text-center mb-4 dark:text-white">!Bienvenido de vuelta!</h1>
 		<form action="#">
 			<div class="mb-4">
-				<label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email:</label>
+				<label for="email" class="block text-sm font-medium text-gray-700 dark:text-white mb-2">Email:</label>
 				<input type="email" id="email" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="your@email.com" required>
 			</div>
 			<div class="mb-4">
-				<label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Contraseña:</label>
+				<label for="password" class="block text-sm font-medium text-gray-700 dark:text-white mb-2">Contraseña:</label>
 				<input type="password" id="password" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" required>
 				<a [routerLink]="['/dashboard/recover-password']"
-					class="text-xs text-gray-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">¿Olvidaste tu contraseña?</a>
+					class="text-xs text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">¿Olvidaste tu contraseña?</a>
 			</div>
 			<div class="flex items-center justify-between mb-4">
 				<div class="flex items-center">
 					<input type="checkbox" id="remember" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 focus:outline-none" checked>
-					<label for="remember" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Recuerdame</label>
+					<label for="remember" class="ml-2 block text-sm text-gray-700 dark:text-white">Recuerdame</label>
 				</div>
 				<a [routerLink]="['/dashboard/register']"
 					class="text-xs text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Registrate</a>
