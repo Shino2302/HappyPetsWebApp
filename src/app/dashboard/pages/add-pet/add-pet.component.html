@@ -6,19 +6,19 @@
 				<form [formGroup]="addPetForm">
             <div class="mb-4">
 				<label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nombre De Tu Mascota:</label>
-				<input formControlName="petName" type="text" id="name" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your Name" required>
+				<input formControlName="petName" type="text" id="name" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="El nombre de tu mascota" required>
 			</div>
 			<div class="mb-4">
-				<label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Raza de tu Mascota:</label>
-				<input formControlName="petRace" type="text" id="email" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="your@email.com" required>
+				<label for="petRace" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Raza de tu Mascota:</label>
+				<input formControlName="petRace" type="text" id="petRace" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="LA raza de tu mascota" required>
 			</div>
             <div class="mb-4">
 				<label for="petSize" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Tamaño de tu mascota:</label>
-				<input formControlName="petSize" type="text" id="petSize" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your Phone Number" required>
+				<input formControlName="petSize" type="text" id="petSize" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Tamaño de tu mascota" required>
 			</div>
 			<div class="mb-4">
 				<label for="petAge" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Edad de tu mascota:</label>
-				<input formControlName="petAge" type="text" id="petAge" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" required>
+				<input formControlName="petAge" type="text" id="petAge" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Edad de tu mascota" required>
 			</div>
 			<button type="submit" (click)="addPet()" class="w-full flex justify-center p-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Registrate</button>
 		</form>

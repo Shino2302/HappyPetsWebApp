@@ -42,7 +42,9 @@ export default class AddPetComponent implements OnInit{
       petRace: this.addPetForm.get('petRace')?.value,
       petSize: this.addPetForm.get('petSize')?.value
     };
-    this.petService.addPet(this.uidLimpio,this.tokenLimpio,data);
+    this.http.post('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+this.uidLimpio.toString()+'.json?auth='+this.tokenLimpio.toString(),data).subscribe(response => {
+      console.log(response);
+    })
     this.router.navigate(['dashboard/my-pets/uid:'+this.uidLimpio.toString()+'/token:'+this.tokenLimpio.toString()]);
     
   }
