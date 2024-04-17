@@ -1,44 +1,125 @@
-<div class="relative flex gap-10 flex-col items-end -mb-48 mt-12 sm:py-12">
-    <button class="btn overflow-hidden relative w-64 bg-green-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-green-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-      <span class="relative">Agregar</span>
-    </button>
-    <button class="btn overflow-hidden relative w-64 bg-red-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-red-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-      <span class="relative">Eliminar</span>
-    </button>
-    <button class="btn overflow-hidden relative w-64 bg-blue-500 text-white py-4 px-4 rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-full before:bg-blue-600 before:left-0 before:top-0 before:-translate-y-full hover:before:translate-y-0 before:transition-transform">
-      <span class="relative">Editar</span>
-    </button>
-</div>
-<section class="-mt-12 mr-36 pl-10">
-    <div class="container">
-        <div class="grid grid-cols-4 gap-4">
-            <div class="">
+
+<div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat"
+  style="background-image: url(../../../../assets/fondo\ HD.jpg)">
+
+
+  <div class="relative w-[70%] h-[70%]" style="overflow-y: scroll; background-color: #fffa;">
+
+    <table class="w-full">
+      <thead>
+        <tr>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Mascota</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Edad</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Raza</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Config_Dispenser</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Tamaño</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            select</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 w-10 h-10">
+                <img class="w-full h-full rounded-full"
+                  src="../../../../assets/perfildog.jpg"
+                  alt="" />
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  chuchis
+                </p>
+              </div>
             </div>
-            <div class="">
-                <h3 class="text-2xl">Nombre</h3>
-            </div>
-            <div class="">
-                <h3 class="text-2xl">Raza</h3>
-            </div>
-            <div class="">
-                <h3 class="text-2xl">Dispensador</h3>
-            </div>
-            <div class="">
-                <label class="inline-flex items-center mt-3">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" ><span class="ml-2 text-gray-700"></span>
-                </label>
-            </div>
-            <div class="">
-                <h3 class="">Chiquinunis</h3>
-                <img class="md:size-32 rounded-full mt-2" src="https://i.ibb.co/gMhBZdh/Chiquinunis.jpg" alt="Chiquinunis">
-            </div>
-            <div class="">
-                <h3 class="">Croiyo</h3>
-            </div>
-            <div class="">
-                <h3 class="">Id:123456789</h3>
-            </div>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">2 años</p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">
+              chihuahua
+            </p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">
+              Mucho alimento
+            </p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">
+              Pequeño
+            </p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+            <input type="checkbox" class="align-middle " />
+          </td>
+          <!--
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                    <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                    <span class="relative">Activo</span>
+                  </span>
+                </td>
+                -->
+        </tr>
+
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+  
+
+
+  <!--botones -->
+  <div class="ml-[3rem] h-[70%] w-[20%]" style="background-color: white;">
+
+    <div class="mt-16 grid space-y-4">
+      <button class="group h-12 px-6 border-2 ml-[10%] mr-[10%] border-gray-300 rounded-full transition duration-300 
+hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+        <div class="relative flex items-center space-x-4 justify-center">
+          <a href="">
+            <span
+              class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">Alimentar</span>
+          </a>
         </div>
+      </button>
+      <button (click)="goToAddNewPet()" class="group h-12 px-6 border-2 ml-[10%] mr-[10%] border-gray-300 rounded-full transition duration-300 
+hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+        <div class="relative flex items-center space-x-4 justify-center">
+
+          <a href="">
+            <span
+              class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">Agregar</span>
+          </a>
+        </div>
+      </button>
+      <button class="group h-12 px-6 border-2 ml-[10%] mr-[10%] border-gray-300 rounded-full transition duration-300 
+                                   hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+        <div class="relative flex items-center space-x-4 justify-center">
+
+          <a href="">
+            <span
+              class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">Eliminar</span>
+          </a>
+        </div>
+      </button>
     </div>
-    
-</section>
+  </div>
+
+</div>

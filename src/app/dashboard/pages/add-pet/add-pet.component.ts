@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PetsModel } from '../../../models/pets-model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MyPetsService } from '../../../services/my-pets.service';
+import { DispenserService } from '../../../services/dispenser.service';
 
 @Component({
   selector: 'app-add-pet',
@@ -17,8 +18,10 @@ export default class AddPetComponent implements OnInit{
   uid:any;
   token:any;
   addPetForm:FormGroup;
+  uidLimpio: string = "";
+  tokenLimpio: string = "";
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private petService:MyPetsService) 
+  constructor(private route: ActivatedRoute, private http: HttpClient, private petService:MyPetsService, private dispenserService:DispenserService) 
   {
     this.addPetForm = new FormGroup({
       petAge: new FormControl(''),
@@ -44,6 +47,14 @@ export default class AddPetComponent implements OnInit{
   ngOnInit(): void {
     this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
     this.token = this.route.snapshot.paramMap.get('token')?.toString();
+    this.uidLimpio = this.uid.toString();
+    this.uidLimpio = this.uidLimpio.replace(/uid:/g, "");
+    this.tokenLimpio = this.token.toString();
+    this.tokenLimpio = this.tokenLimpio.replace(/token:/g, "");
+  }
+
+  agregarDispensador():void{
+    
   }
 
 
