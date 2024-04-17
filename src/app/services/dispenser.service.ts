@@ -23,7 +23,7 @@ export class DispenserService {
 
   public addDispenser(petId:string,jsonToAdd:DispenserModel):void{
     this.http
-    .post('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com//Dispenser/'+petId+'.json',jsonToAdd);
+    .post('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json',jsonToAdd);
   }
 
   public deleteDispenser(petId:string):void{

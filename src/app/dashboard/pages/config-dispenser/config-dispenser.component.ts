@@ -5,6 +5,7 @@ import { DispenserService } from '../../../services/dispenser.service';
 import { MyPetsService } from '../../../services/my-pets.service';
 import { DispenserModel } from '../../../models/dispenser-model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-config-dispenser',
@@ -30,7 +31,7 @@ export default class ConfigDispenserComponent implements OnInit{
   constructor(private route: ActivatedRoute, 
     private dispenser:DispenserService, 
     private pets:MyPetsService,
-    private router: Router) 
+    private router: Router, private http:HttpClient) 
   {
     this.formDispenser = new FormGroup({
       cameraOnOff: new FormControl(''),
@@ -41,6 +42,8 @@ export default class ConfigDispenserComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
+    this.token = this.route.snapshot.paramMap.get('token')?.toString();
     this.uidLimpio = this.uid.toString();
     this.uidLimpio = this.uidLimpio.replace(/uid:/g, "");
     this.tokenLimpio = this.token.toString();
@@ -53,8 +56,8 @@ export default class ConfigDispenserComponent implements OnInit{
   
       for (let index = 0; index < this.listaDeMascotas.length; index++) {
         this.listaCompletaDeMascotas[index] = {
-          id: this.listaDeIds[index].toString(),
-          petAge: this.listaDeMascotas[index].petAge.toString(),
+          id: this.listaDeIds[index],
+          petAge: this.listaDeMascotas[index].petAge,
           petImage: this.listaDeMascotas[index].petImage,
           petName: this.listaDeMascotas[index].petName,
           petRace: this.listaDeMascotas[index].petRace,
@@ -65,6 +68,16 @@ export default class ConfigDispenserComponent implements OnInit{
     });
   }
 
-  
+  activarPorId(id:string):void{
+    let jsonToPut: boolean = true;
+    this.http.put('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+id+'/OnOff.json',jsonToPut).subscribe(data => {
+      console.log(data);
+    })
+  }
+
+
+  activateDispenser(id:string):void{
+    this.dispenser.activateDispenser(id);
+  }
 
 }
