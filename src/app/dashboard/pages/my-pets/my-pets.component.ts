@@ -39,20 +39,28 @@ export default class MyPetsComponent implements OnInit {
       this.listaDeMascotas = Object.values(data);
       console.log(this.listaDeIds);
       console.log(this.listaDeMascotas);
+  
+      for (let index = 0; index < this.listaDeMascotas.length; index++) {
+        this.listaCompletaDeMascotas[index] = {
+          id: this.listaDeIds[index].toString(),
+          petAge: this.listaDeMascotas[index].petAge.toString(),
+          petImage: this.listaDeMascotas[index].petImage,
+          petName: this.listaDeMascotas[index].petName,
+          petRace: this.listaDeMascotas[index].petRace,
+          petSize: this.listaDeMascotas[index].petSize
+        };
+      }
+      console.log(this.listaCompletaDeMascotas);
     });
-    for (let index = 0; index < this.listaDeMascotas.length; index++) {
-      this.listaCompletaDeMascotas[index].id = this.listaDeIds[index].toString();
-      this.listaCompletaDeMascotas[index].petAge = this.listaDeMascotas[index].petAge.toString();
-      this.listaCompletaDeMascotas[index].petImage = this.listaDeMascotas[index].petImage;
-      this.listaCompletaDeMascotas[index].petName = this.listaDeMascotas[index].petName;
-      this.listaCompletaDeMascotas[index].petRace = this.listaDeMascotas[index].petRace;
-      this.listaCompletaDeMascotas[index].petSize = this.listaDeMascotas[index].petSize;
-    }
-    console.log(this.listaCompletaDeMascotas)
   }
+  
 
   goToAddNewPet():void{
     this.router.navigate(['dashboard/add-pet/uid:'+this.uidLimpio.toString()+'/token:'+this.tokenLimpio.toString()]);
+  }
+
+  goToConfigDispenser(petId:string):void{
+    this.router.navigate(['dashboard/config-dispenser/uid:'+this.uidLimpio.toString()+'/token:'+this.tokenLimpio.toString()+'/petId:'+petId]);
   }
 
   agregarDispensador(petId:string):void{

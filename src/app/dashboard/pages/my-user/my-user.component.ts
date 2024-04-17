@@ -46,6 +46,13 @@ export default class MyUserComponent implements OnInit {
     );
   }
 
+  navigateToYourPets():void{
+    this.router.navigate(['dashboard/my-pets/uid:'+this.uidLimpio.toString()+'/token:'+this.tokenLimpio.toString()]);
+  }
+  goToAddNewPet():void{
+    this.router.navigate(['dashboard/add-pet/uid:'+this.uidLimpio.toString()+'/token:'+this.tokenLimpio.toString()]);
+  }
+
   ngOnInit(): void {
     //Metodo para mapear la informacion en el URL de la app:
     //en este caso obtenemos el uid y token del usuario para estar navegando entre si

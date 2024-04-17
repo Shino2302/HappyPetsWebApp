@@ -1,3 +1,64 @@
-<div class="bg-red-500">
-    <button class="bg-lime-700">Hola</button>
-</div>
+
+<div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat"
+  style="background-image: url(../../../../assets/fondo\ HD.jpg)">
+
+
+  <div class="relative w-[70%] h-[70%]" style="overflow-y: scroll; background-color: #fffa;">
+
+    <table class="w-full">
+      <thead>
+        <tr>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Mascota</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Cantidad en plato</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Cantidad en contenedor</th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Dispensar</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(mascota of listaCompletaDeMascotas; track mascota.id ){
+        <tr>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 w-10 h-10">
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{mascota.petName}}
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">
+              Cantidad en plato
+            </p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">
+              cantidad en contenedor
+            </p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+              <button  class="group h-12 px-6 border-2 ml-[10%] mr-[10%] border-gray-300 rounded-full transition duration-300 
+hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+        <div class="relative flex items-center space-x-4 justify-center">
+          <a href="">
+            <span
+              class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">Dispensar</span>
+          </a>
+        </div>
+      </button>
+      </td>
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
