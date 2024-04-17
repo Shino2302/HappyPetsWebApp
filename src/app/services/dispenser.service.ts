@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { DispenserModel } from '../models/dispenser-model';
 
 @Injectable({
@@ -10,27 +10,32 @@ export class DispenserService {
 
   constructor(private http: HttpClient) { }
 
-  public getInfoDispenser(uid:string, token:string, petId:string):Observable<DispenserModel>{
-    return this.http.get<DispenserModel>('https://happydogdb-55b97-default-rtdb.firebaseio.com/Dispenser/'+uid+'/'+petId+'.json?auth='+token);
+  public getInfoDispenser(petId:string):Observable<any>{
+    return this.http.get<any>('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json')
+    .pipe(
+      map(data => {
+        let keys = Object.keys(data);
+        let id = keys[0];
+        return data[id];
+      })
+    );
   }
 
-  public addDispenser(uid:string, token:string,petId:string,jsonToAdd:DispenserModel):void{
+  public addDispenser(petId:string,jsonToAdd:DispenserModel):void{
     this.http
-    .post('https://happydogdb-55b97-default-rtdb.firebaseio.com/Dispenser/'+
-    uid.toString()+'/'+petId+'.json?auth='+token.toString(),jsonToAdd);
+    .post('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com//Dispenser/'+petId+'.json',jsonToAdd);
   }
 
-  public deleteDispenser(uid:string,token:string,petId:string):void{
-    this.http.delete('https://happydogdb-55b97-default-rtdb.firebaseio.com/Dispenser/'+
-    uid.toString()+'/'+petId+'.json?auth='+token.toString());
+  public deleteDispenser(petId:string):void{
+    this.http.delete('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json');
   }
-  public putDispenser(uid:string,token:string,petId:string,jsonToPut:DispenserModel):void{
-    this.http.put('https://happydogdb-55b97-default-rtdb.firebaseio.com/Dispenser/'+
-    uid.toString()+'/'+petId+'.json?auth='+token.toString(),jsonToPut);
+  public activateDispenser(petId:string):void{
+    let jsonToPut: boolean = true;
+    this.http.put('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+petId+'+/OnOff.json',jsonToPut);
   }
 
-  public haveDispenser(uid:string,token:string,petId:string):boolean{
-    let checkOut:Observable<DispenserModel> = this.getInfoDispenser(uid,token,petId);
+  public haveDispenser(petId:string):boolean{
+    let checkOut:Observable<DispenserModel> = this.getInfoDispenser(petId);
     if(checkOut !== null)
       return true;
     else
