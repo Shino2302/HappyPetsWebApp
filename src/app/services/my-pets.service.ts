@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { PetsModel } from '../models/pets-model';
 
 @Injectable({
@@ -11,7 +11,13 @@ export class MyPetsService {
   constructor(private http:HttpClient) { }
 
   public getMyPets(uid:string,token:string):Observable<PetsModel[]>{
-    return this.http.get<PetsModel[]>('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid+'.json?auth='+token);
+    return this.http.get<PetsModel[]>('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid+'.json?auth='+token)
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching pets:', error);
+          return throwError(error);
+        })
+      );
   }
 
   public addPet(uid:string, token:string, jsonToAdd:PetsModel):void{

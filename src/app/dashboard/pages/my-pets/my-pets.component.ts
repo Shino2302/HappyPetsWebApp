@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DispenserService } from '../../../services/dispenser.service';
 import { DispenserModel } from '../../../models/dispenser-model';
 import { MyPetsService } from '../../../services/my-pets.service';
+import { PetsModel, PetsWithIdModel } from '../../../models/pets-model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-my-pets',
@@ -18,7 +20,10 @@ export default class MyPetsComponent implements OnInit {
   token:any;
   uidLimpio: string = "";
   tokenLimpio: string = "";
-  
+  listaDeMascotas: PetsModel[] = [];
+  listaDeIds: string[] = [];
+  listaCompletaDeMascotas: PetsWithIdModel[] = [];
+
 
   constructor(private route: ActivatedRoute, private http:HttpClient,private router:Router, private dispenserService:DispenserService, private petsService:MyPetsService) {  }
   
@@ -29,7 +34,21 @@ export default class MyPetsComponent implements OnInit {
     this.uidLimpio = this.uidLimpio.replace(/uid:/g, "");
     this.tokenLimpio = this.token.toString();
     this.tokenLimpio = this.tokenLimpio.replace(/token:/g, "");
-    this.petsService.getMyPets(this.uidLimpio,this.tokenLimpio);
+    this.petsService.getMyPets(this.uidLimpio,this.tokenLimpio).subscribe(data => {
+      this.listaDeIds = Object.keys(data);
+      this.listaDeMascotas = Object.values(data);
+      console.log(this.listaDeIds);
+      console.log(this.listaDeMascotas);
+    });
+    for (let index = 0; index < this.listaDeMascotas.length; index++) {
+      this.listaCompletaDeMascotas[index].id = this.listaDeIds[index].toString();
+      this.listaCompletaDeMascotas[index].petAge = this.listaDeMascotas[index].petAge.toString();
+      this.listaCompletaDeMascotas[index].petImage = this.listaDeMascotas[index].petImage;
+      this.listaCompletaDeMascotas[index].petName = this.listaDeMascotas[index].petName;
+      this.listaCompletaDeMascotas[index].petRace = this.listaDeMascotas[index].petRace;
+      this.listaCompletaDeMascotas[index].petSize = this.listaDeMascotas[index].petSize;
+    }
+    console.log(this.listaCompletaDeMascotas)
   }
 
   goToAddNewPet():void{
@@ -41,9 +60,11 @@ export default class MyPetsComponent implements OnInit {
     dispensadorGenerico.foodInContainer = 0;
     dispensadorGenerico.foodInPlate = 0;
     dispensadorGenerico.onOff = false;
-    if(!this.dispenserService.haveDispenser(petId)){
-      this.dispenserService.addDispenser(petId,dispensadorGenerico);
-    }
+    this.dispenserService.addDispenser(petId,dispensadorGenerico);
+  }
+
+  dispensadorONo(petId:string):boolean{
+    return this.dispenserService.haveDispenser(petId);
   }
 
 }

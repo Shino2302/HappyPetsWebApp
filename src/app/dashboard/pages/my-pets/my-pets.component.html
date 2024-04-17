@@ -17,19 +17,21 @@
           <th
             class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
             Raza</th>
-          <th
-            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-            Config_Dispenser</th>
+          
           <th
             class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
             Tamaño</th>
-          <th
+          
+            <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+            Config_Dispenser</th>
+            <th
             class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
             select</th>
-
         </tr>
       </thead>
       <tbody>
+        @for(mascota of listaCompletaDeMascotas; track mascota.id ){
         <tr>
           <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <div class="flex items-center">
@@ -37,28 +39,45 @@
               </div>
               <div class="ml-3">
                 <p class="text-gray-900 whitespace-no-wrap">
-                  chuchis
+                  {{mascota.petName}}
                 </p>
               </div>
             </div>
           </td>
           <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-            <p class="text-gray-900 whitespace-no-wrap">2 años</p>
-          </td>
-          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <p class="text-gray-900 whitespace-no-wrap">
-              chihuahua
+              {{mascota.petAge}} años
             </p>
           </td>
           <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <p class="text-gray-900 whitespace-no-wrap">
-              Mucho alimento
+              {{mascota.petRace}}
             </p>
           </td>
           <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <p class="text-gray-900 whitespace-no-wrap">
-              Pequeño
+              {{mascota.petSize}}
             </p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+            @if(dispensadorONo(mascota.id)){
+              <p>
+                Dispensar Comida
+              </p>
+
+            }
+            @else{
+              <button (click)="agregarDispensador(mascota.id)" class="group h-12 px-6 border-2 ml-[10%] mr-[10%] border-gray-300 rounded-full transition duration-300 
+hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+        <div class="relative flex items-center space-x-4 justify-center">
+
+          <a href="">
+            <span
+              class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">Agregar</span>
+          </a>
+        </div>
+      </button>
+            }
           </td>
           <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
             <input type="checkbox" class="align-middle " />
@@ -72,11 +91,7 @@
                 </td>
                 -->
         </tr>
-
-
-
-
-
+      }
       </tbody>
     </table>
   </div>
