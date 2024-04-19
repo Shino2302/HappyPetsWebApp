@@ -74,10 +74,4 @@ export default class ConfigDispenserComponent implements OnInit{
       console.log(data);
     })
   }
-
-
-  activateDispenser(id:string):void{
-    this.dispenser.activateDispenser(id);
-  }
-
 }
