@@ -49,7 +49,7 @@ export default class AddPetComponent implements OnInit{
       foodInPlate: 0,
       onOff: false
     })
-    this.http.post('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+data.idPet.toString()+'.json',dispenserBase).subscribe(response => {
+    this.http.post('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+this.uidLimpio+'/'+data.idPet.toString()+'.json',dispenserBase).subscribe(response => {
       console.log(response);
     });
     this.router.navigate(['dashboard/my-pets/uid:'+this.uidLimpio.toString()]);

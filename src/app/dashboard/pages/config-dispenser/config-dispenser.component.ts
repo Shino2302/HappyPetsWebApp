@@ -73,17 +73,17 @@ export default class ConfigDispenserComponent implements OnInit{
 
   public activateDispenser(petId:string):void{
     let jsonToPut: boolean = true;
-    this.http.get<string>('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json').pipe(map(data =>{
+    this.http.get<string>('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+this.uidLimpio+'/'+petId+'.json').pipe(map(data =>{
       return Object.keys(data)[0]; // Asume que quieres la primera clave
     })).subscribe(firebaseKey => {
-      this.http.put('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+petId+'/'+firebaseKey+'/onOff.json',jsonToPut).subscribe(response => {
+      this.http.put('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+this.uidLimpio+'/'+petId+'/'+firebaseKey+'/onOff.json',jsonToPut).subscribe(response => {
         console.log(response);
       });
     });
   }
   
-  obtenerDatosDelContenerdor(guid:string):Observable<DispenserModel[]>{
-    return this.http.get<DispenserModel[]>('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+guid+'.json')
+  obtenerDatosDelContenerdor(petId:string):Observable<DispenserModel[]>{
+    return this.http.get<DispenserModel[]>('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+this.uidLimpio+'/'+petId+'.json')
       .pipe(
         catchError(error => {
           console.error('Error fetching pets:', error);

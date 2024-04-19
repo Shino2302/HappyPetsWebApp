@@ -26,13 +26,13 @@ export class DispenserService {
     .post('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json',jsonToAdd);
   }
 
-  public addDispenserBase(petId:string):void{
+  public addDispenserBase(guid:string,petId:string):void{
     let dispenserBase: DispenserModel = ({
       foodInContainer: 0,
       foodInPlate: 0,
       onOff: false
     })
-    this.http.post('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json',dispenserBase);
+    this.http.post('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+guid+'/'+petId+'.json',dispenserBase);
   }
 
   public deleteDispenser(petId:string):void{
