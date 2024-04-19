@@ -40,15 +40,18 @@ export class DispenserService {
   }
   public activateDispenser(petId:string):void{
     let jsonToPut: boolean = true;
-    this.http.get<string>('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json').pipe(map(data =>{
-      console.log(Object.keys(data)[0])
-      return Object.keys(data)[0]; // Asume que quieres la primera clave
-    })).subscribe(firebaseKey => {
-      this.http.put('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+petId+'/'+firebaseKey+'/OnOff.json',jsonToPut).subscribe(response => {
+    this.http.get<any>('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json').subscribe(data => {
+      // Obtenemos la primera clave del objeto
+      let firebaseKey = Object.keys(data)[0];
+      console.log(firebaseKey);
+      // Actualizamos el valor de 'onOff' en la base de datos
+      this.http.put('https://happydogsdb-default-rtdb.firebaseio.com/Dispenser/'+petId+'/'+firebaseKey.trim()+'/onOff.json', jsonToPut).subscribe(response => {
         console.log(response);
       });
     });
   }
+  
+  
   
 
   public haveDispenser(petId:string):boolean{
