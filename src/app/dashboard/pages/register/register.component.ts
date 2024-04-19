@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
-import { AuthRegister, UsersModel } from '../../../models/users-model';
+import { AuthRegister, UserModel, UsersModel } from '../../../models/users-model';
 import { empty, switchMap } from 'rxjs';
 
 @Component({
@@ -89,4 +89,33 @@ export default class RegisterComponent{
   //     console.log(this.registerForm.value);
   //   },1000);
   // }
+  //Método para generar GUID:
+  generarGUID():string {
+    //Generamos un formato de 32 caracteres y le pasamos un Exprecion regular para filtrar datos
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      //ahora en la funcion de primer orden aplicamos un random para regenerar el ID
+      var r = Math.random() * 16 | 0,
+          v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+  });
+  }
+  registroSinAuth():void{
+    let data:UserModel = {
+      name: this.registerForm.get('name')?.value,
+      email: this.registerForm.get('email')?.value,
+      phoneNumber: this.registerForm.get('phoneNumber')?.value,
+      password: this.registerForm.get('password')?.value,
+      idUser: this.generarGUID()
+    }
+    this.http.post('https://happydogsdb-default-rtdb.firebaseio.com/Users.json',data).subscribe(
+      response => {
+        console.log(response);
+        this.router.navigate(['dashboard/login']);
+      },
+      error =>{
+        console.log('Tenemos un problema', error);
+        
+      }
+    )
+  }
 }
