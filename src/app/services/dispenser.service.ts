@@ -9,7 +9,7 @@ import { DispenserModel } from '../models/dispenser-model';
 export class DispenserService {
 
   constructor(private http: HttpClient) { }
-
+//Servicios utilizando Firebase Auth:
   public getInfoDispenser(petId:string):Observable<any>{
     return this.http.get<any>('https://usodeemergencia-adfa1-default-rtdb.firebaseio.com/Dispenser/'+petId+'.json')
     .pipe(

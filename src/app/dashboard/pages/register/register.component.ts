@@ -27,7 +27,7 @@ export default class RegisterComponent{
       phoneNumber: new FormControl(''),
       password: new FormControl(''),
       passwordConfirm: new FormControl(''),
-      profileImage: new FormControl('')
+      //profileImage: new FormControl('')
     })
   }
 
