@@ -9,7 +9,7 @@ import { UsersModel } from '../models/users-model';
 export class MyUserService {
 
   constructor(private http:HttpClient) { }
-
+  //métodos con Auth:
   public getMyInfo(uid: string, token: string): Observable<any> {
     const url = `https://happydogdb-55b97-default-rtdb.firebaseio.com/Users/${uid}/.json?auth=${token}`;
     return this.http.get<any>(url).pipe(
@@ -20,9 +20,7 @@ export class MyUserService {
       })
     );
   }
-  
-  
-
+    
   public userDelete(uid: string, token: string): Observable<any> {
     const url = `https://happydogdb-55b97-default-rtdb.firebaseio.com/Users/${uid}.json?auth=${token}`;
     return this.http.delete(url);
@@ -32,4 +30,15 @@ export class MyUserService {
     this.http.put('https://happydogdb-55b97-default-rtdb.firebaseio.com/Users/'+uid+'.json?auth='+token,userData);
   }
 
+  //Métodos sin Auht:
+  public getMyData(guid:string):Observable<any>{
+    const url = `https://happydogsdb-default-rtdb.firebaseio.com/Users/${guid}.json`;
+    return this.http.get<any>(url).pipe(
+      map(data => {
+        let keys = Object.keys(data); // Aquí obtienes un array de las claves del objeto
+        let id = keys[0]; // Aquí obtienes el primer ID (asumiendo que solo hay un objeto en los datos)
+        return data[id]; // Aquí accedes a la información dentro del ID
+      })
+    );
+  }
 }
