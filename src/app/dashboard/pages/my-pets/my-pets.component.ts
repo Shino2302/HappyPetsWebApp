@@ -17,9 +17,7 @@ import { Observable } from 'rxjs';
 export default class MyPetsComponent implements OnInit {
   
   uid:any;
-  token:any;
   uidLimpio: string = "";
-  tokenLimpio: string = "";
   listaDeMascotas: PetsModel[] = [];
   listaDeIds: string[] = [];
   listaCompletaDeMascotas: PetsWithIdModel[] = [];
@@ -29,12 +27,9 @@ export default class MyPetsComponent implements OnInit {
   
   ngOnInit(): void {
     this.uid = this.route.snapshot.paramMap.get('uid')?.toString();
-    this.token = this.route.snapshot.paramMap.get('token')?.toString();
     this.uidLimpio = this.uid.toString();
     this.uidLimpio = this.uidLimpio.replace(/uid:/g, "");
-    this.tokenLimpio = this.token.toString();
-    this.tokenLimpio = this.tokenLimpio.replace(/token:/g, "");
-    this.petsService.getMyPets(this.uidLimpio,this.tokenLimpio).subscribe(data => {
+    this.petsService.getMyPetsOnlyRTDB(this.uidLimpio).subscribe(data => {
       this.listaDeIds = Object.keys(data);
       this.listaDeMascotas = Object.values(data);
       console.log(this.listaDeIds);
@@ -44,7 +39,6 @@ export default class MyPetsComponent implements OnInit {
         this.listaCompletaDeMascotas[index] = {
           id: this.listaDeIds[index].toString(),
           petAge: this.listaDeMascotas[index].petAge.toString(),
-          petImage: this.listaDeMascotas[index].petImage,
           petName: this.listaDeMascotas[index].petName,
           petRace: this.listaDeMascotas[index].petRace,
           petSize: this.listaDeMascotas[index].petSize
@@ -56,11 +50,11 @@ export default class MyPetsComponent implements OnInit {
   
 
   goToAddNewPet():void{
-    this.router.navigate(['dashboard/add-pet/uid:'+this.uidLimpio.toString()+'/token:'+this.tokenLimpio.toString()]);
+    this.router.navigate(['dashboard/add-pet/uid:'+this.uidLimpio.toString()]);
   }
 
   goToConfigDispenser(petId:string):void{
-    this.router.navigate(['dashboard/config-dispenser/uid:'+this.uidLimpio.toString()+'/token:'+this.tokenLimpio.toString()+'/petId:'+petId]);
+    this.router.navigate(['dashboard/config-dispenser/uid:'+this.uidLimpio.toString()+'/petId:'+petId]);
   }
 
   agregarDispensador(petId:string):void{

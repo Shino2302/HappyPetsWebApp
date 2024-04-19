@@ -11,7 +11,7 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/login/login.component')
             },
             {
-                path: 'my-pets/:uid/:token',
+                path: 'my-pets/:uid',
                 title: 'Mis Mascotas',
                 loadComponent: () => import('./dashboard/pages/my-pets/my-pets.component')
             },
@@ -36,12 +36,12 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/what-its-happy-dogs/what-its-happy-dogs.component')
             },
             {
-                path: 'config-dispenser/:uid/:token/:petId',
+                path: 'config-dispenser/:uid/:petId',
                 title: 'Configuracion Dispensador',
                 loadComponent: () => import('./dashboard/pages/config-dispenser/config-dispenser.component')
             },
             {
-                path: 'add-pet/:uid/:token',
+                path: 'add-pet/:uid',
                 title: 'Agregar Mascota',
                 loadComponent: () => import('./dashboard/pages/add-pet/add-pet.component')
             },

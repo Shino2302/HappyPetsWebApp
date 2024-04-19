@@ -2,13 +2,13 @@
     style="background-image: url(../../../../assets/perro-juega-en-parque.jpg);">
     <div class="relative w-[40rem] top-[5%] bg-white rounded-lg shadow-lg">
             <div class="mb-4">
-				<h1 class="text-2xl font-semibold text-center text-gray-500 mb-6">Nombre: {{userDataLimpio.name}}</h1>
+				<h1 class="text-2xl font-semibold text-center text-gray-500 mb-6">Nombre: {{this.dataComplete.name}}</h1>
 			</div>
 			<div class="mb-4">
-				<h1 class="text-2xl font-semibold text-center text-gray-500 mb-6">Email: {{userDataLimpio.email}}</h1>
+				<h1 class="text-2xl font-semibold text-center text-gray-500 mb-6">Email: {{this.dataComplete.email}}</h1>
 			</div>
             <div class="mb-4">
-				<h1 class="text-2xl font-semibold text-center text-gray-500 mb-6">{{userDataLimpio.phoneNumber}}</h1>
+				<h1 class="text-2xl font-semibold text-center text-gray-500 mb-6">Telefono: {{this.dataComplete.phoneNumber}}</h1>
 			</div>
 			<button type="submit" (click)="userDelete()" class="w-full flex justify-center p-4 border border-transparent rounded-md shadow-sm text-lg font-medium bg-gradient-to-r from-cyan-400 to-cyan-600 text-white py-6 mx-auto  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 ">Eliminar Cuenta</button>
 	</div>

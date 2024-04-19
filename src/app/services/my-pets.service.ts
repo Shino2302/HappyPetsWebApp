@@ -19,6 +19,18 @@ export class MyPetsService {
         })
       );
   }
+  public getMyPetsOnlyRTDB(guid:string):Observable<PetsModel[]>{
+    return this.http.get<PetsModel[]>('https://happydogsdb-default-rtdb.firebaseio.com/Pets/'+guid+'.json')
+      .pipe(
+        catchError(error => {
+          console.error('Error fetching pets:', error);
+          return throwError(error);
+        })
+      );
+  }
+  public addPetOnlyRTDB(guid:string, newPet:PetsModel):void{
+    this.http.post('https://happydogsdb-default-rtdb.firebaseio.com/Pets/'+guid+'.json',newPet);
+  }
 
   public addPet(uid:string, token:string, jsonToAdd:PetsModel):void{
     this.http.post('https://happydogdb-55b97-default-rtdb.firebaseio.com/Pets/'+uid.toString()+'.json?auth='+token.toString(),jsonToAdd);
