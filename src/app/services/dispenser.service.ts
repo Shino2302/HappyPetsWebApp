@@ -37,7 +37,7 @@ export class DispenserService {
   public haveDispenser(petId:string):boolean{
     let checkOut:Observable<DispenserModel> = this.getInfoDispenser(petId);
     if(checkOut !== null)
-      return true;
+      return false;
     else
       return true;
   }
